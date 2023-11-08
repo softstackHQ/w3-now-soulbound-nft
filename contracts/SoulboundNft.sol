@@ -9,7 +9,10 @@ import {IERC4973} from "./IERC4973.sol";
 contract SoulboundNft is ERC721URIStorage, Ownable2Step, IERC4973 {
     uint256 private _tokenIdCounter;
 
-    constructor() ERC721("SoulboundNft", "SB-NFT") Ownable(msg.sender) {}
+    constructor(
+        string memory name_,
+        string memory symbol_
+    ) ERC721(name_, symbol_) Ownable() {}
 
     function safeMint(address to, string memory uri) public onlyOwner {
         _safeMint(to, _tokenIdCounter);
@@ -45,15 +48,27 @@ contract SoulboundNft is ERC721URIStorage, Ownable2Step, IERC4973 {
     }
 
     function balanceOf(
-        address owner
+        address owner_
     ) public view override(ERC721, IERC4973, IERC721) returns (uint256) {
-        return super.balanceOf(owner);
+        return super.balanceOf(owner_);
     }
 
     function ownerOf(
         uint256 tokenId
     ) public view override(ERC721, IERC4973, IERC721) returns (address) {
         return super.ownerOf(tokenId);
+    }
+
+    function _beforeTokenTransfer(
+        address from,
+        address to,
+        uint256,
+        uint256
+    ) internal override {
+        require(
+            from == address(0) || to == address(0),
+            "SB-Nft: not transferable"
+        );
     }
 
     /**
