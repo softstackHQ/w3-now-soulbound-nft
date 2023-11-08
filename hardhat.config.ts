@@ -1,10 +1,10 @@
-import * as dotenv from 'dotenv'
+import * as dotenv from "dotenv"
 
-import { HardhatUserConfig } from 'hardhat/config'
-import '@typechain/hardhat'
-import 'hardhat-gas-reporter'
-import 'solidity-coverage'
-import 'hardhat-contract-sizer'
+import { HardhatUserConfig } from "hardhat/config"
+import "@typechain/hardhat"
+import "hardhat-gas-reporter"
+import "solidity-coverage"
+import "hardhat-contract-sizer"
 
 dotenv.config()
 
@@ -13,7 +13,7 @@ dotenv.config()
 
 const config: HardhatUserConfig = {
     solidity: {
-        version: '0.8.7',
+        version: "0.8.21",
         settings: {
             optimizer: {
                 enabled: true,
@@ -23,7 +23,7 @@ const config: HardhatUserConfig = {
     },
     networks: {
         sepolia: {
-            url: process.env.SEPOLIA_URL || '',
+            url: process.env.SEPOLIA_URL || "",
             accounts:
                 process.env.PRIVATE_KEY !== undefined
                     ? [process.env.PRIVATE_KEY]
@@ -32,7 +32,7 @@ const config: HardhatUserConfig = {
     },
     gasReporter: {
         enabled: process.env.REPORT_GAS !== undefined,
-        currency: 'USD',
+        currency: "USD",
     },
     // etherscan: {
     //     apiKey: process.env.ETHERSCAN_API_KEY,

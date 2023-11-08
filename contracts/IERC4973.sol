@@ -5,15 +5,6 @@ pragma solidity 0.8.21;
 /// @dev See https://eips.ethereum.org/EIPS/eip-4973
 /// Note: the ERC-165 identifier for this interface is 0xeb72bb7c
 interface IERC4973 {
-    /// @dev This emits when ownership of any ABT changes by any mechanism.
-    ///  This event emits when ABTs are given or equipped and unequipped
-    ///  (`to` == 0).
-    event Transfer(
-        address indexed from,
-        address indexed to,
-        uint256 indexed tokenId
-    );
-
     /// @notice Count all ABTs assigned to an owner
     /// @dev ABTs assigned to the zero address are considered invalid, and this
     ///  function throws for queries about the zero address.

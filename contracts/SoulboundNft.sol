@@ -78,7 +78,6 @@ contract SoulboundNft is ERC721URIStorage, Ownable2Step, IERC4973 {
         bytes4 interfaceId
     ) public view virtual override(ERC721URIStorage) returns (bool) {
         return
-            interfaceId == type(IERC4973).interfaceId ||
-            super.supportsInterface(interfaceId);
+            interfaceId == 0xeb72bb7c || super.supportsInterface(interfaceId);
     }
 }
