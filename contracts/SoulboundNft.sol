@@ -4,17 +4,24 @@ pragma solidity 0.8.21;
 import {ERC721, IERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import {ERC721URIStorage} from "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import {Ownable, Ownable2Step} from "@openzeppelin/contracts/access/Ownable2Step.sol";
-import {IERC4973} from "./IERC4973.sol";
 
-contract SoulboundNft is ERC721URIStorage, Ownable2Step, IERC4973 {
+contract SoulboundNft is ERC721URIStorage, Ownable2Step {
     uint256 private _tokenIdCounter;
 
     constructor(
         string memory name_,
-        string memory symbol_
-    ) ERC721(name_, symbol_) Ownable() {}
+        string memory symbol_,
+        address owner_
+    ) ERC721(name_, symbol_) Ownable() {
+        _transferOwnership(owner_);
+    }
 
     function safeMint(address to, string memory uri) public onlyOwner {
+        require(balanceOf(to) == 0, "SB-Nft: already minted");
+        require(
+            bytes(_baseURI()).length != 0 || bytes(uri).length != 0,
+            "SB-Nft: no uri"
+        );
         _safeMint(to, _tokenIdCounter);
         _setTokenURI(_tokenIdCounter, uri);
         _tokenIdCounter++;
@@ -25,59 +32,15 @@ contract SoulboundNft is ERC721URIStorage, Ownable2Step, IERC4973 {
         _burn(tokenId);
     }
 
-    function give(
-        address to,
-        bytes calldata metadata,
-        bytes calldata signature
-    ) external returns (uint256) {
-        return 0;
-    }
-
-    function take(
-        address from,
-        bytes calldata metadata,
-        bytes calldata signature
-    ) external returns (uint256) {
-        return 0;
-    }
-
-    function decodeURI(
-        bytes calldata metadata
-    ) external returns (string memory) {
-        return "";
-    }
-
-    function balanceOf(
-        address owner_
-    ) public view override(ERC721, IERC4973, IERC721) returns (uint256) {
-        return super.balanceOf(owner_);
-    }
-
-    function ownerOf(
-        uint256 tokenId
-    ) public view override(ERC721, IERC4973, IERC721) returns (address) {
-        return super.ownerOf(tokenId);
-    }
-
     function _beforeTokenTransfer(
         address from,
         address to,
         uint256,
         uint256
-    ) internal override {
+    ) internal pure override {
         require(
             from == address(0) || to == address(0),
             "SB-Nft: not transferable"
         );
-    }
-
-    /**
-     * @dev See {IERC165-supportsInterface}.
-     */
-    function supportsInterface(
-        bytes4 interfaceId
-    ) public view virtual override(ERC721URIStorage) returns (bool) {
-        return
-            interfaceId == 0xeb72bb7c || super.supportsInterface(interfaceId);
     }
 }
