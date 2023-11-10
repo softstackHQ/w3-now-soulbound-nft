@@ -4,14 +4,14 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "REPORT_GAS=true hardhat test",
-        "compile": "hardhat compile",
         "lint": "solhint 'contracts/**/*.sol' && eslint '**/*.{js,ts}'",
         "format": "prettier '**/*.{json,sol,ts,md}' --write",
+        "compile": "hardhat compile",
+        "test": "REPORT_GAS=true hardhat test",
         "coverage": "hardhat coverage",
         "contractSize": "hardhat size-contracts",
-        "deploy": "hardhat run scripts/deploy.ts",
-        "verify": "hardhat verify"
+        "deploy": "hardhat run scripts/deploy.ts --network",
+        "verify": "hardhat verify --constructor-args scripts/deploymentArgs.ts --network"
     },
     "author": "Softstack GmbH",
     "license": "MIT",

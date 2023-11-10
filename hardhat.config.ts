@@ -25,8 +25,15 @@ const config: HardhatUserConfig = {
         },
     },
     networks: {
-        sepolia: {
-            url: process.env.SEPOLIA_URL || "",
+        polygon: {
+            url: process.env.POLYGON_URL || "",
+            accounts:
+                process.env.PRIVATE_KEY !== undefined
+                    ? [process.env.PRIVATE_KEY]
+                    : [],
+        },
+        mumbai: {
+            url: process.env.MUMBAI_URL || "",
             accounts:
                 process.env.PRIVATE_KEY !== undefined
                     ? [process.env.PRIVATE_KEY]
@@ -37,9 +44,9 @@ const config: HardhatUserConfig = {
         enabled: process.env.REPORT_GAS !== undefined,
         currency: "USD",
     },
-    // etherscan: {
-    //     apiKey: process.env.ETHERSCAN_API_KEY,
-    // },
+    etherscan: {
+        apiKey: process.env.ETHERSCAN_API_KEY,
+    },
     contractSizer: {
         runOnCompile: true,
     },
