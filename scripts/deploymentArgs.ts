@@ -1,8 +1,8 @@
 const DeploymentArgs = [
-    "W3NOW-NFT 2023", // collection name
+    "Blockchain in Deutschland", // collection name
     "W3NOW23", // collection symbol
-    "https://ipfs.io/ipfs/QmPLosNSsFw81UZQisFzGm8mQ7HzmKSReQe6Ds2XF8c1cV", // token URI (metadata)
-    "0x2Cf143175b21564bc7520FF2d893884104dB8d07", // owner address
+    "https://ipfs.io/ipfs/QmbN1zP5CmZzso823sCprqCvn45su1YS3KR1o4VbZkuR9J", // token URI (metadata)
+    "0xC52AdD79Bfc30058B15f313b89F8dF8c1E0695b9", // owner address
 ]
 
 export default DeploymentArgs
