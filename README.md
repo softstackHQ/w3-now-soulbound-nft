@@ -1,6 +1,6 @@
-# W3Now Soulbound NFT
+# W3NOW Soulbound NFT
 
-Für die Studie W3Now wurde ein "Soulbound NFT" entwickelt, der an alle Teilnehmer der Studie ausgeschüttet werden soll. Der Smart Contract erlaubt es dem Besitzer NFTs zu schürfen und an beliebige Adressen zu senden (minting). Jede Adresse darf maximal einen NFT besitzen und hat die Möglichkeit diesen eigenständig wieder zu zerstören (burnen). Damit ist das Recht auf Löschung nach Artikel 17 DSGVO abgedeckt. Die geschürften NFTs haben alle die selben Metadaten und dienen als Nachweis, an der Studie teilgenommen zu haben. Es gibt keine Möglichkeit die NFTs nach der Erstellung (initiales Senden zum Empfänger) an Dritte weiter zu transferieren. Die Token sind für ihren Lebenzyklus fest an eine Adresse gebunden.
+Für die Studie [W3NOW](https://www.w3now.de/) wurde ein "Soulbound NFT" entwickelt, der an alle Teilnehmer der Studie ausgeschüttet werden soll. Der Smart Contract erlaubt es dem Besitzer NFTs zu schürfen und an beliebige Adressen zu senden (minting). Jede Adresse darf maximal einen NFT besitzen und hat die Möglichkeit diesen eigenständig wieder zu zerstören (burnen). Damit ist das Recht auf Löschung nach Artikel 17 DSGVO abgedeckt. Die geschürften NFTs haben alle die selben Metadaten und dienen als Nachweis, an der Studie teilgenommen zu haben. Es gibt keine Möglichkeit die NFTs nach der Erstellung (initiales Senden zum Empfänger) an Dritte weiter zu transferieren. Die Token sind für ihren Lebenzyklus fest an eine Adresse gebunden.
 
 ## Scripts
 
