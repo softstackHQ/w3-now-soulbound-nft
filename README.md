@@ -2,6 +2,9 @@
 
 Für die Studie [W3NOW](https://www.w3now.de/) wurde ein "Soulbound NFT" entwickelt, der an alle Teilnehmer der Studie ausgeschüttet werden soll. Der Smart Contract erlaubt es dem Besitzer NFTs zu schürfen und an beliebige Adressen zu senden (minting). Jede Adresse darf maximal einen NFT besitzen und hat die Möglichkeit diesen eigenständig wieder zu zerstören (burnen). Damit ist das Recht auf Löschung nach Artikel 17 DSGVO abgedeckt. Die geschürften NFTs haben alle die selben Metadaten und dienen als Nachweis, an der Studie teilgenommen zu haben. Es gibt keine Möglichkeit die NFTs nach der Erstellung (initiales Senden zum Empfänger) an Dritte weiter zu transferieren. Die Token sind für ihren Lebenzyklus fest an eine Adresse gebunden.
 
+English:
+For the W3NOW study, a "Soulbound NFT" was developed to be distributed to all participants of the study. The smart contract allows the owner to mine NFTs and send them to any address (minting). Each address may own a maximum of one NFT and has the option to destroy it independently (burning). This covers the right to erasure under Article 17 GDPR. The mined NFTs all have the same metadata and serve as proof of participation in the study. There is no possibility to transfer the NFTs to third parties after their creation (initial sending to the recipient). The tokens are permanently bound to an address for their lifecycle.
+
 ## Scripts
 
 To interact with this repository your can take advantage of predefined scripts for setting up, testing, linting, formating or compiling. Feel free to add your own scripts (for example for contract deployment or verification).
